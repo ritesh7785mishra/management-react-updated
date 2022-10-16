@@ -119,7 +119,7 @@ function Edit() {
                 Management System
             </h3>
             <div className="img__container">
-                <img className="header__img" src={image} alt="" />
+                <img className="header__img" src={image?image:headShot} alt="" />
             </div>
          </div>
 
@@ -130,7 +130,7 @@ function Edit() {
                </p> 
                 <div className="img__editContainer">
                     <div className="img__container fun">
-                        <img className="main__img" src={image} alt="" />
+                        <img className="main__img" src={image?image:headShot} alt="" />
                         <button className='camera__btn' onClick={() => setCameraBtn(preVal => !preVal)}><img src={cameraIcon} alt="" /></button>
                     </div>
                     <div className="edDel__box" style={{visibility: cameraBtn ? 'visible':'hidden'}}>

@@ -27,7 +27,7 @@ img {
     width: 9em;
     height: 9em;
     padding: 0.2em;
-    border: solid black 1.5px;
+    /* border: solid black 1.5px; */
     background-color: white;
 }
 .fun{
