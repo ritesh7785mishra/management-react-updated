@@ -1,0 +1,278 @@
+.edit{
+    margin: 0 auto;
+    margin-top: 3em;
+    max-width: 375px;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 2em;
+    height: 2em;
+}
+.left__section,
+.right__section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .2em;
+    position: relative;
+}
+.imgWarning{
+    color: grey;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.5em 0 1em 0;
+}
+.main__img{
+    width: 9em;
+    height: 9em;
+    padding: 0.2em;
+    border: solid black 1.5px;
+    background-color: white;
+}
+.fun{
+    display: flex;
+    flex-direction: column;
+}
+.camera__btn{
+  
+    z-index: 2;
+    width: 2em;
+    height: 2em;
+    border:none;
+    border-radius: 100%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2.5em;
+    margin-left: 6.5em;
+    cursor: pointer;
+}
+
+.camera__btn:hover{
+    background-color: #3e8e41;
+}
+
+.camera__btn > img{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+}
+
+.img__editContainer{
+    display: flex;
+    flex-direction: column;
+    width: 97.5%;
+}
+.fun{
+    align-self: center;
+}
+.edDel__box{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: -1.5em;
+    align-self: flex-end;
+}
+
+
+.edit__box,
+.delete__box{
+    display: flex;
+    align-items: center;
+    padding: 0.125em;
+    cursor: pointer;
+}
+
+.edit__box:hover{
+    background-color: #3e8e41;
+    color:white;
+}
+.delete__box:hover{
+    background-color: rgb(210, 80, 80);
+    color: white;
+}
+
+hr{
+    border-top: 2px solid grey;
+    display:none;
+}
+
+.edit__box > p,
+.delete__box > p{
+    font-size: 0.8rem;
+    margin-right: 1.5em;
+}
+
+.edit__box > img,
+.delete__box > img{
+    
+    height: 1.25em;
+    width: 1.25em;
+    margin-right: 1em;
+}
+
+.name{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+input{
+    border-radius: 7px;
+    padding: 0.4em;
+    width: 100%;
+    margin-top: 1em;
+    border: 1px solid rgb(163, 157, 157);
+}
+input::placeholder{
+    font-size: 0.8rem;
+}
+.name > input {
+    width: 45%;
+    padding: 0.4em;
+    
+}
+
+.dob__gender{
+  margin-top: 0.2em;
+  width: 100%;
+}
+
+select{
+    width: 100%;
+    margin-top: 1em;
+    padding: 0.4em;
+    border-radius: 7px;
+    border: 1px solid rgb(163, 157, 157);
+}
+
+.phone__number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.2em;
+    border: 1px solid rgb(163, 157, 157);
+    border-radius: 7px;
+    margin-top: 1em;
+}
+
+.phone__number > img {
+    border-radius: 0.2px;
+    height: 1em;
+    width: 2em;
+    margin-left: 0.5em;
+}
+
+.phone__number > input{
+    margin-left: 1em;
+    margin-bottom: 0.7em;
+    border: none;
+    padding: none;
+}
+.small__number{
+    font-size: 0.7rem;
+}
+
+.city__state{
+    display:flex;
+    justify-content: space-between;
+}
+
+.city__state > input {
+    width: 45%;
+    padding: 0.4em;
+    
+}
+
+.zipCode::-webkit-outer-spin-button,
+.zipCode::-webkit-inner-spin-button,
+.small__number::-webkit-outer-spin-button,
+.small__number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.small__number:focus{
+    outline: none;
+}
+
+.zip__country{
+    display:flex;
+    justify-content: space-between;
+}
+
+.zip__country > input {
+    width: 45%;
+    padding: 0.4em;  
+}
+
+.warning__text{
+    color: red;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.save__cancel > button{
+    margin-top: 1em;
+    padding: 0.25em 0.7em;
+    border-radius: 7px;
+    border: none;
+}
+
+.save{
+    background-color: rgb(111, 211, 188);
+    color: white;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+.save:hover ,
+.cancel:hover{background-color: #3e8e41}
+
+.save:active,
+.cancel:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.disabled__save{
+    background-color: grey;
+    color: white;
+    margin-left: 0.5em;
+    cursor:default;
+}
+
+.cancel{
+    background-color:grey;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 600px){
+    
+    .edit__content{
+        display: flex;
+        padding: 1em 0;
+     }
+
+    .edit{
+        max-width: 900px;
+    }
+
+    .save__cancel{
+        align-self: flex-end;
+    }
+
+    .left__section,
+    .right__section{
+        padding: 1em;
+    }
+
+    hr{
+        display: block;
+    }
+   
+}

@@ -1,0 +1,142 @@
+.home{
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 22em;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.home__content{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+
+.headbar{
+    display: flex;
+    padding: .5em;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+}
+.title{
+    font-size: 1rem
+}
+
+.headbar > .img__container{
+    width: 2em;
+    height: 2em;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+
+}
+
+
+.pencil__icon{
+    width: 2em;
+    height: 2em;
+    padding: 0.25em;
+    background-color: rgb(18, 183, 117);
+    border-radius: 100%;
+    margin: .5em .5em .5em auto;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-bottom: 1.5em;
+}
+.pencil,
+.delete{
+    width: 1.5em;
+    height: 1.5em;
+}
+.delete__icon{
+    
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    background-color: rgb(228, 92, 29);
+    border-radius: 100%;
+    margin: .5em .5em .5em auto;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.delete__icon:hover ,
+.pencil__icon:hover{background-color: #3e8e41}
+
+.delete__icon:active,
+.pencil__icon:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.top__details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+.top__details > .img__container {
+    padding: 0.2em;
+    box-shadow: 0px 2px 1.5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+}
+
+.main__img{
+    height: 7em;
+    width: 7em;
+    border-radius: 100% ;
+}
+
+.empl__name{
+    margin-top: 1em;
+}
+
+.designation{
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.dob,
+.nationality{
+    margin-left: 2em;
+}
+.low__details{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    margin-bottom: 7em;
+}
+
+.light__text{
+    font-size: 0.9rem;
+    color: grey;
+    text-align: center;
+}
+.dark__text{
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+
+
+@media (min-width: 600px){
+    .low__details{
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 7em;
+        justify-content: space-between;
+    }
+    .home{
+        width: 60em;
+     }
+}
