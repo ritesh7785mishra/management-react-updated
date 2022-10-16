@@ -8,15 +8,15 @@ import {useNavigate} from "react-router-dom"
 function Home() {
 
     const navigate = useNavigate()
-    const {user,removeUser,retrieveData,userData} = useContext(Context) 
+    const {user,removeUser,retrieveData} = useContext(Context) 
 
     function handleDeleteRedirect(){
         removeUser(user.id)
         navigate('/')
     }
 
-    console.log(userData)//
-
+    console.log(user, 'this is the current user')
+   
   return (
     <div className='home'>
         <div className="headbar">

@@ -23,14 +23,13 @@ function ContextProvider({children}){
                 return res.json()
             } )
             .then( (data)=> {
-                console.log(data)
                 setUserData(data)
                 setIsPending(false)
                 setError(null)
-                console.log("data fetching is done")
+
             }).catch((error) => {
                 if(error.name === "AbortError"){
-                    console.log('it is a abort error')
+
                 }else{
                     console.log(error.message)
                     setError(error.message)
@@ -42,8 +41,6 @@ function ContextProvider({children}){
     },[])
 
     function retrieveData(id){
-        // const user = userData.find(user => user.id === id)
-        // console.log('retrieve function is running and this user is found ', user)
         setEditUserData(user)
     }
 
@@ -57,7 +54,6 @@ function ContextProvider({children}){
             method: 'DELETE',
             headers: {"Content-Type": "application/json"}
         }).then(() => {
-            console.log("the file with id: " + id + " is deleted")
             const newUserData = userData.filter(user => user.id !== id)
             setUserData(newUserData)
         })
@@ -66,16 +62,14 @@ function ContextProvider({children}){
 
 
     function addUser(userToAdd){
-       const nature =  userData.some(user => user.id === userToAdd.id)
-       console.log(nature, 'it should return false by default case ')
+    //    const nature =  userData.some(user => user.id === userToAdd.id)
 
         if(userData.some(user => user.id === userToAdd.id)){
              const newUserData = userData.filter(user => user.id !== userToAdd.id)
              const updatedUserData = [...newUserData,userToAdd]
              setUserData(updatedUserData);
-             console.log("update portion is called")
-             console.log(userData, 'this is userData when item with same id found ')
-             
+             console.log('updating part was called')
+
              fetch('http://localhost:8000/data/' + userToAdd.id, {
                 method: 'PATCH',
                 body: JSON.stringify(userToAdd),
@@ -83,26 +77,23 @@ function ContextProvider({children}){
                   'Content-type': 'application/json; charset=UTF-8',
                 },
               })
-              .then(()=>{
-                console.log("updated Successfully")
-              })
+             
 
 
         }else{
             const newUserWithId = {...userToAdd, id: uuidv4()}
             const newUserData = [...userData, newUserWithId]
-            setEditUserData({...newUserWithId})
+            // setEditUserData({...newUserWithId})
+            setUserData(newUserData)
 
-            console.log(newUserWithId, "this is new user with id")
-           
             fetch("http://localhost:8000/data",{
                 method:'POST',
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify(newUserWithId)
             })
             .then(()=>{
-                console.log('added Successfully')
                 setUserData(newUserData)
+                setUser(newUserWithId)
             })
         }
         

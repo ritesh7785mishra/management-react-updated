@@ -25,35 +25,31 @@ function Edit() {
     
         if (dd < 10) {
             dd = '0' + dd;
-            console.log('new dd', dd)
+            
         }
     
         if (mm < 10) {
             mm = '0' + mm;
-            console.log('new mm', mm)
+           
         } 
         
         today = yyyy + '-' + mm + '-' + dd;
-        console.log(today)
+        
     }
     
 
     
     const navigate = useNavigate()
-    const {addUser,currentUserFound,editUserData,setGlobalImage} = useContext(Context)
+    const {addUser,currentUserFound,editUserData} = useContext(Context)
     const [cameraBtn, setCameraBtn] = useState(false)
     const [warning, setWarning] = useState(false)
     const [userToAdd, setUserToAdd] = useState({...editUserData})
 
-    console.log(userToAdd, 'this is the user we are adding')
-   
     let {firstName,lastName,designation,dateOfBirth,gender,phoneNumber,address,city,state,zipCode,country,email,password,image} = userToAdd
-    
-   
+
     function handleChange(e){
         setUserToAdd({
             ...userToAdd,
-            image:headShot,
             [e.target.name] : e.target.value
         })
     }
@@ -91,15 +87,20 @@ function Edit() {
         const client = filestack.init('ALTULfjmTCykqtAU0Ptwoz');
         
         const options = {
-            onFileUploadFinished(file){
-                console.log(file,"this is the uploaded file")
-                const imgUrl= file.url
-                setUserToAdd({
-                    ...userToAdd,
-                    image:imgUrl
-                })
-                setGlobalImage(imgUrl)
-            }//provides functionality of call back function
+                accept: ["image/*"],
+                onFileSelected(file){
+                if(file.size > 1000000){
+                    throw Error('File is too big to upload')
+                }},
+                onFileUploadFinished(file){
+                    const imgUrl= file.url
+                    setUserToAdd({
+                        ...userToAdd,
+                        image:imgUrl
+                    })
+                    
+                },//provides functionality of call back function,
+            
         }
         client.picker(options).open()//opens up the filestack file upload picker
     }
@@ -109,8 +110,6 @@ function Edit() {
             ...userToAdd,
             image:headShot
         })
-
-        setGlobalImage(headShot)
     }
 
   return (
@@ -120,7 +119,7 @@ function Edit() {
                 Management System
             </h3>
             <div className="img__container">
-                <img className="header__img" src={image?image:headShot} alt="" />
+                <img className="header__img" src={image} alt="" />
             </div>
          </div>
 
@@ -131,7 +130,7 @@ function Edit() {
                </p> 
                 <div className="img__editContainer">
                     <div className="img__container fun">
-                        <img className="main__img" src={image?image:headShot} alt="" />
+                        <img className="main__img" src={image} alt="" />
                         <button className='camera__btn' onClick={() => setCameraBtn(preVal => !preVal)}><img src={cameraIcon} alt="" /></button>
                     </div>
                     <div className="edDel__box" style={{visibility: cameraBtn ? 'visible':'hidden'}}>
@@ -163,7 +162,7 @@ function Edit() {
                     <div className="input__gender">
                        
                        <select onChange={(e)=>handleChange(e)} name="gender" value={gender}>
-	                        <option value="none" selected>Gender</option>
+	                        <option defaultValue="none">Gender</option>
 	                        <option value="male">Male</option>
 	                        <option value="female">Female</option>
 	                        <option value="other">Other</option>

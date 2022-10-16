@@ -28,24 +28,20 @@ function Login() {
     const currentUser = userData.find( user => user.email === currentEmail)
 
     if(currentEmail==="admin" && currentPassword==="admin"){
-      console.log('admin')
       navigate('/admin')
     }else if(currentUser){
       
          if(currentUser.password !== currentPassword){
-            console.log("wrong password")
+           
             alert('Wrong Password')
             
           }else{
-            console.log('correct password')
             currentUserFound(currentUser)
             navigate('/home')
           }
     }else{
 
       if(currentEmail.includes("@")){
-        
-        console.log('hey there I am working fine : login functionality')
         currentUserFound("")
         navigate('/edit')
       }else{
