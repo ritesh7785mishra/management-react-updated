@@ -56,6 +56,7 @@ function ContextProvider({children}){
         }).then(() => {
             const newUserData = userData.filter(user => user.id !== id)
             setUserData(newUserData)
+            setUser("")
         })
         
     }

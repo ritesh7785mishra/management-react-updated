@@ -1,21 +1,3 @@
 {
-  "data": [
-    {
-      "firstName": "user",
-      "lastName": "userLast",
-      "designation": "testUser",
-      "email": "user@123",
-      "dateOfBirth": "2022-10-15",
-      "phoneNumber": "9140229033",
-      "address": "user",
-      "city": "Kanpur",
-      "state": "Uttar Pradesh",
-      "zipCode": "208010",
-      "country": "India",
-      "password": "123456",
-      "gender": "male",
-      "image": "https://cdn.filestackcontent.com/jUwenVQQouut8ifU8TfY",
-      "id": "2f5a4843-b832-42c3-9211-b54ed4bffede"
-    }
-  ]
+  "data": []
 }
