@@ -1,3 +1,21 @@
 {
-  "data": []
+  "data": [
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "designation": "test",
+      "email": "test@",
+      "dateOfBirth": "2022-10-14",
+      "gender": "Male",
+      "phoneNumber": "9140229033",
+      "address": "J.K Colony",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "zipCode": "208010",
+      "country": "India",
+      "password": "123456",
+      "id": "da40b28f-4902-4471-9b77-8a4f5d1ac6af",
+      "image": "https://cdn.filestackcontent.com/SudSc12RiRlZCqi8uz9w"
+    }
+  ]
 }
